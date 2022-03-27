@@ -32,7 +32,7 @@ def get_first_feature_map(tfrecord_path: str):
     '''
     # Create an iterator over the TFRecords file. The iterator yields
     # the binary representations of Example messages as strings.
-    options = tf.io.TFRecordOptions(tf.io.TFRecordCompressionType.GZIP)
+    options = tf.io.TFRecordOptions(compression_type = 'GZIP')  #### Johannes makes a change here to (compression_type = 'GZIP')
     iterator = tf.io.tf_record_iterator(tfrecord_path, options=options)
 
     # get the first Example stored in the TFRecords file
